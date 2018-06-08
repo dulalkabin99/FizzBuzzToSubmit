@@ -1,7 +1,7 @@
 package com.company;
 import  java.util.Random;
 
-public class Main {
+public class FizzBuzz {
     static String pr;
 
     public static void main(String[] args) {
@@ -20,6 +20,12 @@ public class Main {
                 int temp = random1;
                 random1 = random2;
                 random2 = temp;
+            }
+
+            //Checking if two random number are 10 digit apart
+            if ((random2-random1)<10) {
+                System.out.println("This won't take long");
+
             }
             //Looping to get 100 Numbers
             for (int i = random1; i <= random2; i++) {
