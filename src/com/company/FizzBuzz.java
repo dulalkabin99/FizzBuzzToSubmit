@@ -3,23 +3,21 @@ import  java.util.Random;
 
 public class FizzBuzz {
     static String pr = "Buzz";
-    static String [] rps = new String[]{"Rock", "paper", "Scissors", "Lizard", "Spock"};
-    static int index =0;
+    static String[] rps = new String[]{"Rock", "paper", "Scissors", "Lizard", "Spock"};
+    static int index = 0;
 
     public static void main(String[] args) {
 
         Random rnd = new Random();
         int random1 = getRandomNum();
         int random2 = getRandomNum();
-        System.out.println("The Two Random Number Generated For You are: "+random1 + " And "+ random2);
-
+        System.out.println("The Two Random Number Generated For You are: " + random1 + " And " + random2);
 
 
         if (random1 == random2) {
             pr = "Sazam";
             System.out.println(pr);
-        }
-        else {
+        } else {
             //swapping the values if random number 1 is bigger than random Number 2
             if (random1 > random2) {
                 int temp = random1;
@@ -27,10 +25,10 @@ public class FizzBuzz {
                 random2 = temp;
 
             }
-            System.out.println("For the purpose of this program We set the smallest number to "+random1+ " and Larger Number to "+random2);
-            System.out.println("------------------------------------Let's Start--------------------------------");
+            System.out.println("For the purpose of this program We set the smallest number to " + random1 + " and Larger Number to " + random2);
+            System.out.println("------------------------------------Let's Start-------------------------------------------------");
             //Checking if two random number are 10 digit apart
-            if ((random2-random1)<10) {
+            if ((random2 - random1) < 10) {
                 System.out.println("This won't take long");
 
             }
@@ -62,24 +60,56 @@ public class FizzBuzz {
         }
 
         if (i % 7 == 0) {
-            pr = (pr +" -Multiple of 7");
+            pr = (pr + " -Multiple of 7");
         }
 // code to print Rock/Paper/scissors
-        if ((i>10)&&(i%2==0)){
-            pr=pr + " -"+ rps[index];
+        if ((i > 10) && (i % 2 == 0)) {
+            pr = pr + " -" + rps[index];
             index++;
-            if (index>4){
-                index=0;
+            if (index > 4) {
+                index = 0;
             }
+        }
+        if (i>20){
+            String oe=GetOddEven(i);
+            pr += " ---" + oe;
         }
         return pr;
     }
-//Method to get a random Number
+
+    //Method to get a random Number
     public static int getRandomNum() {
         Random rnd = new Random();
         int rand = rnd.nextInt(100) + 1;
 
         return rand;
+    }
+
+    public static String GetOddEven(int i) {
+        int digit = i;
+        int number = (Math.abs(digit) % 10);
+        String numToStr = "";
+        String oddOrEven;
+
+
+        if (number == 1) numToStr = "one";
+        if (number == 2) numToStr = "two";
+        if (number == 3) numToStr = "Three";
+        if (number == 4) numToStr = "four";
+        if (number == 5) numToStr = "five";
+        if (number == 6) numToStr = "six";
+        if (number == 7) numToStr = "seven";
+        if (number == 8) numToStr = "eight";
+        if (number == 9) numToStr = "nine";
+        if (number == 0) numToStr = "zero";
+
+        if (numToStr.length() % 2 == 0) {
+            oddOrEven= "Potter";
+        }
+        else {
+            oddOrEven= "Harry";
+        }
+        return oddOrEven;
     }
 }
 
