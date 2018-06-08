@@ -50,15 +50,20 @@ public class FizzBuzz {
 
         } else if (i % 5 == 0) {
             pr = "Buzz";
-        } else {
+        }
+        else {
             pr = Integer.toString(i);
+        }
+
+        if (i % 7 == 0) {
+            pr = (pr +" -Multiple of 7");
         }
         return pr;
     }
 //Method to get a random Number
     public static int getRandomNum() {
         Random rnd = new Random();
-        int rand = rnd.nextInt(100) + 1;
+        int rand = rnd.nextInt(22) + 1;
 
         return rand;
     }
