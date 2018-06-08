@@ -1,38 +1,62 @@
 package com.company;
-
+import  java.util.Random;
 
 public class Main {
     static String pr;
 
     public static void main(String[] args) {
-        //Looping to get 100 Numbers
-        for (int i = 1; i <= 100; i++) {
 
-            //Getting the number
-            String prnitS = numPrint(i);
+        Random rnd = new Random();
+        int random1 = getRandomNum();
+        int random2 = getRandomNum();
 
-            //Printing the return
-            System.out.println(prnitS);
+
+        if (random1 == random2) {
+            pr = "Sazam";
+            System.out.println(pr);
+        }
+        else {
+            if (random1 > random2) {
+                int temp = random1;
+                random1 = random2;
+                random2 = temp;
+            }
+            //Looping to get 100 Numbers
+            for (int i = random1; i <= random2; i++) {
+
+                //Getting the number
+                pr = numPrint(i);
+
+                //Printing the return
+                System.out.println(pr);
+            }
 
         }
-
     }
 
-//method to print Number
+    //method to print Number
     public static String numPrint(int st) {
-            int i=st;
-            if ((i % 3 == 0) && (i % 5 == 0)) {
-                pr = "FizzBuzz";
-            } else if (i % 3 == 0) {
-                pr = "Fizz";
+        int i = st;
+        if ((i % 3 == 0) && (i % 5 == 0)) {
+            pr = "FizzBuzz";
+        } else if (i % 3 == 0) {
+            pr = "Fizz";
 
-            } else if (i % 5 == 0) pr = "Buzz";
-            else {
-                pr = Integer.toString(i);
-
-            }
+        } else if (i % 5 == 0) {
+            pr = "Buzz";
+        } else {
+            pr = Integer.toString(i);
+        }
         return pr;
     }
+//Method to get a random Number
+    public static int getRandomNum() {
+        Random rnd = new Random();
+        int rand = rnd.nextInt(100) + 1;
+
+        return rand;
+    }
 }
+
 
 
